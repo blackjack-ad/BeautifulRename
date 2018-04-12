@@ -13,9 +13,10 @@ This script changes the name of their episodes of a TV Series making them beauti
 
 `python BeautifulRename.py TV_Series_directory ID_TMDB log_file.txt`
 
-#### Examples
-
+#### Example 1
 `python BeautifulRename.py Lost 4607 log.txt`
+
+#### Examples 2
 `python BeautifulRename.py Lost 4607`
 
 

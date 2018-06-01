@@ -5,7 +5,7 @@ import tmdbsimple as tmdb
 import requests
 import simplejson as json
 
-tmdb.API_KEY = 'XXXXXXXXXXXXXXXX'
+tmdb.API_KEY = '30898a8d784e20b1a2f0016faa6802ce'
 
 
 def main():
@@ -42,7 +42,11 @@ def main():
 
             for file in listfile:
                 path_file = input_filename+"/"+dir+"/"+file
-                name_file = os.path.basename(path_file)
+                print(path_file)
+
+                name_file, file_extension = os.path.splitext(path_file)
+
+                name_file = os.path.basename(name_file)
 
                 episode_number = searchEpisode(name_file)  # Individua numero episodio
 
@@ -56,7 +60,7 @@ def main():
                 log.write(path_file + " -> " + new_path_file + '\n')
                 print(title_string+'\n')
 
-                os.rename(path_file, path_file.replace(name_file, title_string))  # Rinomina il file (ATTENZIONE)
+                os.rename(path_file, new_path_file)  # Rinomina il file (ATTENZIONE)
 
     time_end = datetime.datetime.now().strftime("%A, %d. %B %Y %I:%M%p")
     print("\nDone [" + time_end + "]")
